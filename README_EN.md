@@ -111,7 +111,7 @@ See the [`examples/`](examples/) directory for detailed worked analyses:
 
 ### A ¥2,000,000 Skill Set — Now Open Source
 
-Chinese law schools spend five years teaching statutes, cases, jurisprudence, and thesis writing. Then you graduate and discover: your client's problems are never just about the law. Should we settle? Are the CFO's numbers real? Does this contract create a moral hazard? Can we trust that regression analysis? — Law school never mentioned any of this.
+Chinese law schools spend four years teaching statutes, cases, jurisprudence, and thesis writing. Then you graduate and discover: your client's problems are never just about the law. Should we settle? Are the CFO's numbers real? Does this contract create a moral hazard? Can we trust that regression analysis? — Law school never mentioned any of this.
 
 **This isn't your fault. Chinese legal education simply doesn't have this course.**
 
