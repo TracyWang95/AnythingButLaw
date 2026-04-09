@@ -1,8 +1,8 @@
 <div align="center">
 
-# AnythingButLaw.skill
+# 法外功夫 AnythingButLaw.skill
 
-> *"Law school taught you the law. Nobody taught you everything else."*
+> *法学院教你法律，但客户的问题从来不只是法律。*
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-skill-blueviolet.svg)](https://docs.anthropic.com/en/docs/claude-code)
@@ -10,166 +10,123 @@
 
 <br>
 
-Your client asks about the NPV of a settlement.<br>
-Opposing counsel throws a regression analysis at you in a discrimination case.<br>
-The CFO's numbers in a due diligence don't add up, but you can't say why.<br>
-A contract looks fine on paper, but the incentives are all wrong.<br>
+客户问你和解方案的净现值是多少。<br>
+对方律师在歧视案中扔出一份回归分析。<br>
+尽调中 CFO 的数字对不上，但你说不出哪里不对。<br>
+合同条款看着没问题，但激励机制全是坑。<br>
 
-**These are not legal problems. They are the problems lawyers actually face.**
+**这些不是法律问题。这些才是律师真正面对的问题。**
 
-**AnythingButLaw** is an AI skill that gives lawyers the non-legal superpowers law school never taught — 9 analytical frameworks covering decision analysis, game theory, contract design, accounting, finance, economics, statistics, and more.
+**法外功夫** 将九大商业分析框架蒸馏成一个 AI 技能，赋予律师法学院从未教过的非法律超能力。
 
-[Knowledge Domains](#knowledge-domains) · [Install](#install) · [Usage](#usage) · [Examples](#examples) · [Why This Exists](#why-this-exists)
+[知识域](#九大知识域) · [安装](#安装) · [使用](#使用方法) · [示例](#示例) · [为什么做这个](#为什么做这个)
 
-[中文](README_ZH.md)
+[English](README_EN.md)
 
 </div>
 
 ---
 
-> **法外功夫** — 法律之外的真功夫。九大商业分析框架，一个 AI 技能搞定。
+## 它能做什么
 
-## What It Does
+法外功夫为 Claude 装备了 **9 大分析框架**，覆盖现代法律实务的核心非法律需求：
 
-AnythingButLaw equips Claude with **9 analytical frameworks** essential for modern legal practice:
+- **构建决策树** 用于和解谈判，包含期望值、敏感性分析和交叉点计算
+- **运用博弈论** 识别谈判中的道德风险、逆向选择、可信威胁与空洞威胁
+- **设计合同** 分析 6 种合同类型的激励对齐、风险分配和可验证性
+- **解读财务报表** 在尽调中发现红旗信号（收入确认操纵、现金流与利润的背离）
+- **计算现值、DCF 和 CAPM** 用于损害赔偿量化和企业估值
+- **分析市场** 运用供需、弹性、剩余和垄断框架支持反垄断工作
+- **运用法经济学** 评估违约救济、和解vs审判决策、最优制裁力度
+- **评估统计证据** 包括假设检验、置信区间和 Daubert 标准
+- **挑战回归分析** 在歧视案件中识别遗漏变量偏误、多重共线性和双向因果
 
-- **Build decision trees** for settlement negotiations with expected value, sensitivity analysis, and crossover points
-- **Apply game theory** to identify moral hazard, adverse selection, and credible vs. empty threats in negotiations
-- **Design contracts** by analyzing incentive alignment, risk allocation, and verifiability across 6 contract types
-- **Read financial statements** and spot red flags in due diligence (revenue recognition tricks, cash flow vs. profit gaps)
-- **Calculate present value, DCF, and CAPM** for damages quantification and business valuation
-- **Analyze markets** using supply/demand, elasticity, surplus, and monopoly frameworks for antitrust work
-- **Apply law & economics** to evaluate breach remedies, settlement vs. trial decisions, and optimal sanctions
-- **Evaluate statistical evidence** including hypothesis testing, confidence intervals, and the Daubert standard
-- **Challenge regression analyses** in discrimination cases by identifying omitted variables, multicollinearity, and two-way causation
+## 九大知识域
 
-## Knowledge Domains
+| # | 域 | 参考文件 | 律师核心场景 |
+|---|---|---------|------------|
+| 1 | 决策分析 | `decision-analysis.md` | 诉讼策略、和解、风险规避、敏感性分析 |
+| 2 | 博弈论与信息 | `game-theory.md` | 谈判策略、道德风险、逆向选择、囚徒困境 |
+| 3 | 合同设计 | `contracting.md` | 合同结构、激励机制、风险分配、违约条款 |
+| 4 | 会计 | `accounting.md` | 三大报表、尽调、财务舞弊识别 |
+| 5 | 金融 | `finance.md` | 现值、DCF、CAPM、企业估值、损害赔偿 |
+| 6 | 微观经济学 | `microeconomics.md` | 反垄断、市场失灵、外部性、科斯定理 |
+| 7 | 法经济学 | `economic-analysis.md` | 违约赔偿、和解分析、刑罚经济学 |
+| 8 | 统计分析 | `statistics.md` | 假设检验、Daubert 标准、置信区间 |
+| 9 | 多元统计 | `multivariate-statistics.md` | 歧视诉讼回归分析、遗漏变量偏误 |
 
-| # | Domain | Reference File | Lawyer Use Cases |
-|---|--------|---------------|-----------------|
-| 1 | Decision Analysis | `decision-analysis.md` | Settlement strategy, risk aversion, sensitivity analysis |
-| 2 | Game Theory & Information | `game-theory.md` | Negotiation, moral hazard, adverse selection, credible threats |
-| 3 | Contract Design | `contracting.md` | Contract structure, incentives, risk allocation, breach remedies |
-| 4 | Accounting | `accounting.md` | Financial statements, due diligence, fraud detection |
-| 5 | Finance | `finance.md` | Present value, DCF, CAPM, damages quantification, valuation |
-| 6 | Microeconomics | `microeconomics.md` | Antitrust, market failure, externalities, Coase theorem |
-| 7 | Law & Economics | `economic-analysis.md` | Breach remedies, settlement analysis, criminal sanctions |
-| 8 | Statistics | `statistics.md` | Hypothesis testing, Daubert standard, confidence intervals |
-| 9 | Multivariate Statistics | `multivariate-statistics.md` | Regression in discrimination cases, omitted variable bias |
+## 安装
 
-## Install
-
-### Claude Code (Recommended)
+### Claude Code（推荐）
 
 ```bash
 git clone https://github.com/TracyWang95/AnythingButLaw.git ~/.claude/skills/AnythingButLaw
 ```
 
-### Manual Install
+详见 [INSTALL.md](INSTALL.md)。
 
-```bash
-git clone https://github.com/TracyWang95/AnythingButLaw.git
-# Copy the folder to your Claude Code skills directory
-```
+## 使用方法
 
-See [INSTALL.md](INSTALL.md) for detailed instructions.
+安装后，当你向 Claude 提出涉及以下场景的问题时，技能会自动触发：
 
-## Usage
+- 和解谈判与诉讼策略
+- 合同起草与激励设计
+- 财务报表分析与尽调
+- 企业估值与损害赔偿计算
+- 市场分析与反垄断
+- 统计证据评估
+- 歧视案件中的回归分析
 
-Once installed, the skill activates automatically when you ask Claude questions involving:
-
-- Settlement negotiations and litigation strategy
-- Contract drafting and incentive design
-- Financial statement analysis or due diligence
-- Business valuation and damages calculation
-- Market analysis and antitrust issues
-- Statistical evidence evaluation
-- Regression analysis in discrimination cases
-
-### Example Prompts
+### 示例提问
 
 ```
-"My client received a $1.1M settlement demand. Plaintiff has 50% chance on 
-liability, likely damages $1M, but 10% chance of $25M punitive. Should we settle?"
+"客户收到110万和解要求。原告责任认定概率50%，可能赔偿100万，
+但有10%概率判2500万惩罚性赔偿。该不该接受和解？"
 
-"We're negotiating a service contract — flat fee vs. cost-plus. What are the 
-incentive implications of each structure?"
+"我们在谈一个服务合同——固定费用还是成本加成。各自的激励问题是什么？"
 
-"Opposing counsel submitted a regression showing no gender effect on salary 
-after controlling for education and tenure. How do I challenge this?"
+"对方提交了一份回归分析，控制学历和工龄后声称性别系数不显著。怎么挑战这个分析？"
 ```
 
-## Examples
+## 示例
 
-See the [`examples/`](examples/) directory for detailed worked analyses:
+详见 [`examples/`](examples/) 目录中的完整分析案例。
 
-- **Settlement Decision Analysis** — Decision tree, expected value, sensitivity analysis, risk aversion
-- **Contract Negotiation with Information Asymmetry** — Moral hazard, adverse selection, incentive alignment
-- **Discrimination Regression Analysis** — t-statistics, omitted variables, hypothesis testing on proportions
+## 为什么做这个
 
-## Why This Exists
+### 一套价值 200 万的功夫
 
-### A ¥2,000,000 Skill Set — Now Open Source
+中国法学院五年，教你法条、判例、法理、论文。毕业之后你发现：客户的问题从来不只是法律。和解该不该接？对方财报有没有水分？合同条款的激励机制对不对？回归分析结论能不能信？——这些问题，法学院一个字都没教过。
 
-Chinese law schools spend five years teaching statutes, cases, jurisprudence, and thesis writing. Then you graduate and discover: your client's problems are never just about the law. Should we settle? Are the CFO's numbers real? Does this contract create a moral hazard? Can we trust that regression analysis? — Law school never mentioned any of this.
+**这不是你的错。中国法学教育体系里，就没有这门课。**
 
-**This isn't your fault. Chinese legal education simply doesn't have this course.**
+美国法学院有一门课，专门教律师九种非法律技能：决策分析、博弈论、合同设计、会计、金融、微观经济学、法经济学、统计分析、多元回归。不是通识教育、不是选修水课——是真刀真枪的分析框架，每一个都直指法律实务中最核心的非法律痛点。
 
-American law schools teach a course that covers 9 non-legal skills essential for lawyers: decision analysis, game theory, contract design, accounting, finance, microeconomics, law & economics, statistics, and multivariate regression. Not a liberal arts elective — real analytical frameworks, each targeting the most critical non-legal pain points in legal practice.
+这门课的学费、生活费、加上三年 JD 的机会成本，折合人民币大概 **200 万**。
 
-The tuition, living costs, and opportunity cost of a 3-year JD add up to roughly **¥2,000,000 (≈$280K)**.
+我去 Notre Dame 读法学院的时候，有点像杨过误入古墓派——本以为是去学更高深的法律，结果发现最值钱的功夫全在法律之外。全中国几十万律师，绝大多数一辈子都接触不到。
 
-When I went to Notre Dame Law School, it felt like stumbling into a hidden martial arts sect — I thought I was going to learn more advanced law, but the most valuable skills turned out to be everything *outside* the law. That's why the Chinese name is **法外功夫** ("kung fu beyond the law"): decision trees, game theory, regression analysis — none of it is law, but every bit of it keeps you alive on the legal battlefield.
+**所以我把它开源了。**
 
-The problem: this "secret knowledge" has only been passed down to a handful of students. Hundreds of thousands of Chinese lawyers will never encounter it in their careers.
+**法外功夫** 把这 200 万的课程浓缩成一个 AI 技能。你不需要去美国读 JD，不需要花三年时间，甚至不需要会英文。装上这个技能，Claude 就是你的古墓派师父——随时调用九大分析框架，帮你在决策、谈判、尽调、诉讼中看到别人看不到的东西。
 
-**So I open-sourced it.**
+武林中最怕的不是功夫差，是不知道有这门功夫。
 
-**AnythingButLaw** condenses a ¥2M education into one AI skill. No JD required. No three-year commitment. No English fluency needed. Install this skill, and Claude becomes your personal analyst — ready to deploy 9 analytical frameworks for negotiation, due diligence, litigation, and beyond.
+现在你知道了。
 
-The most dangerous gap isn't lacking the skill — it's not knowing the skill exists.
+## 评测结果
 
-Now you know.
-
-## Project Structure
-
-```
-AnythingButLaw/
-├── SKILL.md                    # Main skill entry point (AgentSkills standard)
-├── references/                 # Deep domain knowledge (loaded on demand)
-│   ├── decision-analysis.md
-│   ├── game-theory.md
-│   ├── contracting.md
-│   ├── accounting.md
-│   ├── finance.md
-│   ├── microeconomics.md
-│   ├── economic-analysis.md
-│   ├── statistics.md
-│   └── multivariate-statistics.md
-├── examples/                   # Worked examples
-├── README.md
-├── README_ZH.md
-├── INSTALL.md
-└── LICENSE
-```
-
-## Evaluation Results
-
-Tested against 3 legal practice problems (settlement analysis, contract negotiation, discrimination regression):
-
-| Metric | With Skill | Baseline | Delta |
-|--------|-----------|----------|-------|
-| **Pass Rate** | **100%** | 73.3% | +26.7% |
+| 指标 | 有技能 | 基线 | 差异 |
+|------|--------|------|------|
+| **通过率** | **100%** | 73.3% | +26.7% |
 | Tokens | 23,968 | 14,451 | +66% |
-| Time | 117s | 79.8s | +47% |
+| 时间 | 117s | 79.8s | +47% |
 
-**Key finding**: The skill's biggest impact is on problems requiring multi-step incentive reasoning (game theory + contract design). In the contract negotiation test, the baseline completely missed a moral hazard problem, recommending the wrong contract. The skill correctly identified it.
+## 致谢
 
-## Credits
+- **灵感来源**：[colleague.skill](https://github.com/titanwings/colleague-skill) by @titanwings
+- **驱动力**：Claude Code + AgentSkills standard
 
-- **Inspired by**: [colleague.skill](https://github.com/titanwings/colleague-skill) by @titanwings
-- **Powered by**: Claude Code + AgentSkills standard
-
-## License
+## 许可证
 
 [MIT](LICENSE)
