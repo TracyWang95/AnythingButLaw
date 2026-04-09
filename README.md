@@ -29,31 +29,47 @@
 
 ## 它能做什么
 
-法外功夫为 Claude 装备了 **9 大分析框架**，覆盖现代法律实务的核心非法律需求：
+法外功夫为 Claude 装备了 **9 大深度分析框架**，覆盖现代法律实务的核心非法律需求。每个框架都包含 **LaTeX 公式推导、worked examples、对抗清单、经典判例、常见陷阱速查表**：
 
-- **构建决策树** 用于和解谈判，包含期望值、敏感性分析和交叉点计算
-- **运用博弈论** 识别谈判中的道德风险、逆向选择、可信威胁与空洞威胁
-- **设计合同** 分析 6 种合同类型的激励对齐、风险分配和可验证性
-- **解读财务报表** 在尽调中发现红旗信号（收入确认操纵、现金流与利润的背离）
-- **计算现值、DCF 和 CAPM** 用于损害赔偿量化和企业估值
-- **分析市场** 运用供需、弹性、剩余和垄断框架支持反垄断工作
-- **运用法经济学** 评估违约救济、和解vs审判决策、最优制裁力度
-- **评估统计证据** 包括假设检验、置信区间和 Daubert 标准
-- **挑战回归分析** 在歧视案件中识别遗漏变量偏误、多重共线性和双向因果
+- **构建决策树** 用于和解谈判，包含期望值、贝叶斯更新、VOI、效用函数、敏感性分析
+- **运用博弈论** 识别道德风险、逆向选择、可信 vs 空洞威胁、Rubinstein 讨价还价、重复博弈
+- **设计合同** 分析 6 种合同类型、委托代理模型、hold-up、关系专用投资、关系型合同
+- **解读财务报表** 在尽调中发现红旗信号：DuPont 分解、Altman Z-Score、Beneish M-Score
+- **计算现值、DCF、WACC、CAPM、Black-Scholes** 用于损害赔偿量化和企业估值
+- **运行事件研究法** 量化证券欺诈的 per-share damages
+- **分析市场** 运用 HHI、SSNIP、弹性、消费者剩余、掠夺性定价框架支持反垄断工作
+- **运用法经济学** 评估 Hand 公式、Calabresi-Melamed、Becker 犯罪模型、效率违约
+- **评估统计证据** 包括假设检验、贝叶斯推理、检察官谬误、Daubert 标准、多重比较校正
+- **挑战回归分析** 识别遗漏变量、多重共线性、双向因果，使用 IV、DiD、RD 等现代因果推断工具
 
 ## 九大知识域
 
 | # | 域 | 参考文件 | 律师核心场景 |
 |---|---|---------|------------|
-| 1 | 决策分析 | `decision-analysis.md` | 诉讼策略、和解、风险规避、敏感性分析 |
-| 2 | 博弈论与信息 | `game-theory.md` | 谈判策略、道德风险、逆向选择、囚徒困境 |
-| 3 | 合同设计 | `contracting.md` | 合同结构、激励机制、风险分配、违约条款 |
-| 4 | 会计 | `accounting.md` | 三大报表、尽调、财务舞弊识别 |
-| 5 | 金融 | `finance.md` | 现值、DCF、CAPM、企业估值、损害赔偿 |
-| 6 | 微观经济学 | `microeconomics.md` | 反垄断、市场失灵、外部性、科斯定理 |
-| 7 | 法经济学 | `economic-analysis.md` | 违约赔偿、和解分析、刑罚经济学 |
-| 8 | 统计分析 | `statistics.md` | 假设检验、Daubert 标准、置信区间 |
-| 9 | 多元统计 | `multivariate-statistics.md` | 歧视诉讼回归分析、遗漏变量偏误 |
+| 1 | 决策分析 | `decision-analysis.md` | 诉讼策略、和解、贝叶斯、VOI、效用函数 |
+| 2 | 博弈论与信息 | `game-theory.md` | 讨价还价、道德风险、逆向选择、承诺机制 |
+| 3 | 合同设计 | `contracting.md` | 委托代理、hold-up、关系型合同、违约救济 |
+| 4 | 会计 | `accounting.md` | 三大报表、DuPont、Altman Z、Beneish M |
+| 5 | 金融 | `finance.md` | DCF、WACC、CAPM、Black-Scholes、事件研究 |
+| 6 | 微观经济学 | `microeconomics.md` | HHI、SSNIP、弹性、外部性、Coase 定理 |
+| 7 | 法经济学 | `economic-analysis.md` | Hand 公式、Calabresi-Melamed、Becker 模型 |
+| 8 | 统计分析 | `statistics.md` | 假设检验、贝叶斯、Daubert、多重比较 |
+| 9 | 多元统计 | `multivariate-statistics.md` | OLS、IV、DiD、遗漏变量、歧视回归 |
+
+## Worked Examples（10 个完整案例）
+
+每个 example 都是真实情境下的完整数值分析，含公式、计算、敏感性分析和建议：
+
+- `settlement-decision-analysis.md` — 和解 vs 审判的期望值陷阱
+- `contract-negotiation-game-theory.md` — 球员合同中的道德风险 + 逆向选择
+- `discrimination-regression-analysis.md` — 薪酬歧视的回归分析
+- `accounting-due-diligence.md` — SaaS 公司的收入确认红旗
+- `damages-valuation-dcf.md` — 特许经营违约的 DCF 损害赔偿计算
+- `antitrust-market-definition.md` — 合并审查的 SSNIP + HHI 分析
+- `efficient-breach-and-hold-up.md` — 制药合同中的效率违约与 hold-up
+- `statistical-evidence-daubert.md` — 环境癌症诉讼的 Daubert 挑战
+- `hand-formula-negligence.md` — 电动滑板车产品责任与 Hand 公式
+- `auction-bidding-strategy.md` — 破产拍卖的投标策略
 
 ## 安装
 
