@@ -1,354 +1,121 @@
-MEMORANDUM: CONTRACT ANALYSIS FOR JORDY MICHAELS ENGAGEMENT
-Client: Washington Unicorns
-Subject: Advising on Which Contract Offer to Extend to Jordy Michaels
-============================================================================
+# 合同谈判中的博弈论：如何识别道德风险与逆向选择
 
-I. EXECUTIVE SUMMARY
+> **涉及知识域**：博弈论、合同设计、决策分析
 
-The Unicorns should offer the CONTINGENT contract ($10 million, paid only
-if Michaels plays). This contract yields a higher expected profit for the
-Unicorns ($12.5 million vs. $11 million) AND -- critically -- solves an
-adverse selection problem that the FOR SURE contract creates. Under the
-FOR SURE contract, Michaels accepts in all scenarios, including the one
-where he is permanently disabled and cannot play, leaving the Unicorns
-paying $6 million for nothing. The CONTINGENT contract aligns incentives:
-Michaels only gets paid when the Unicorns get value, and Michaels still
-accepts in every scenario where he is able to play.
+## 案情
 
-============================================================================
+你的客户 Washington Unicorns 篮球队正在与球星 Jordy Michaels 谈判最后一个赛季的合同。Michaels 上赛季状态尚可，但近期受背伤困扰，最多再打一年。
 
-II. FRAMEWORK
+赛季开始前的夏天，Michaels 会处于以下三种状态之一（**他自己知道，球队不知道**）：
 
-This problem sits at the intersection of three analytical domains:
-
-  (1) Decision Analysis -- structuring the Unicorns' choice under
-      uncertainty using a decision tree and expected value calculations.
-  (2) Game Theory / Information Asymmetry -- Michaels will know his health
-      status (private information) before deciding whether to accept and
-      play; the Unicorns will not. This creates an adverse selection problem.
-  (3) Contract Design -- choosing a contract structure that allocates risk
-      appropriately and aligns incentives between the parties.
+| 状态 | 概率 | 描述 | Michaels 的最低上场报酬 |
+|------|------|------|----------------------|
+| **A：健康** | 50% | 可正常上场，享受球迷和媒体的关注 | $0（打球本身就值得） |
+| **B：中度伤残** | 25% | 可以上场但要忍受剧痛，痛苦消除了上场的乐趣 | $200 万（抵消治疗和精神成本） |
+| **C：永久伤残** | 25% | 无法上场 | 不适用 |
 
-============================================================================
+球队视角：Michaels 上场一年可带来 **2000 万美元** 的门票和广告收入。
 
-III. SETUP: MICHAELS' THREE POSSIBLE HEALTH STATES
+**两个备选合同**：
 
-  State A: Reasonably Healthy (probability = 50%)
-    - Can play unimpeded.
-    - Playing is intrinsically worthwhile for Michaels (fan/media attention),
-      so his minimum acceptable salary to play is $0.
+- **保底合同 (FOR SURE)**：支付 $600 万，无论是否上场
+- **绩效合同 (CONTINGENT)**：支付 $1000 万，仅在上场时支付
 
-  State B: Moderately Disabled (probability = 25%)
-    - Can play but in significant pain.
-    - Pain eliminates the enjoyment of playing and imposes treatment/emotional
-      costs. He needs at least $2 million to offset these costs.
-    - His minimum acceptable salary to play is $2 million.
+---
 
-  State C: Permanently Disabled (probability = 25%)
-    - Cannot play at all, regardless of payment.
+## 分析
 
-From the Unicorns' perspective:
-    - If Michaels plays, the team earns $20 million in ticket/advertising
-      revenue.
-    - If Michaels does not play, the team earns $0 from this arrangement.
+### 一、保底合同下的 Michaels 行为
 
-============================================================================
+关键在于分析 Michaels 在**每种状态下的理性选择**：
 
-IV. ANALYSIS OF THE "FOR SURE" CONTRACT: PAY $6 MILLION REGARDLESS
+**状态 A（健康，50%）**：拿到 $600 万，打球本身就有乐趣 → **上场**。球队收益：$2000 万 - $600 万 = **+$1400 万**。
 
-Under this contract, Michaels receives $6 million whether or not he plays.
+**状态 B（中度伤残，25%）**：无论上不上场都拿 $600 万。
+- 上场：$600 万 - $200 万（痛苦成本）= 净得 $400 万
+- 不上场：$600 万 - $0 = 净得 $600 万
+- **理性选择：不上场**。这是经典的**道德风险 (moral hazard)** —— 固定报酬消除了上场的激励。
+- 球队收益：$0 - $600 万 = **-$600 万**。
 
-Step 1: Michaels' Decision in Each State
+**状态 C（永久伤残，25%）**：无法上场，仍拿 $600 万。球队收益：**-$600 万**。
 
-  State A (Healthy, 50%): Michaels receives $6M. Playing is worthwhile
-  even for free, so he will play. Unicorns gain: $20M - $6M = $14M.
+**球队期望利润**：
 
-  State B (Moderate Disability, 25%): Michaels receives $6M regardless.
-  If he plays, his net benefit = $6M - $2M (pain cost) = $4M.
-  If he does not play, his net benefit = $6M - $0 = $6M.
-  RATIONAL CHOICE: Michaels does NOT play. He collects $6M without
-  enduring any pain. (This is a classic moral hazard problem -- the
-  fixed payment eliminates the incentive to perform.)
-  Unicorns gain: $0 - $6M = -$6M.
+$$0.50 \times (+\$1400万) + 0.25 \times (-\$600万) + 0.25 \times (-\$600万) = \$700万 - \$150万 - \$150万 = \textbf{\$400 万}$$
 
-  State C (Permanently Disabled, 25%): Michaels cannot play.
-  He collects $6M. Unicorns gain: $0 - $6M = -$6M.
+### 二、绩效合同下的 Michaels 行为
 
-Step 2: Michaels' Acceptance Decision
+**状态 A（健康，50%）**：上场得 $1000 万 + 乐趣，不上场得 $0 → **上场**。球队收益：**+$1000 万**。
 
-  Michaels will accept this contract in ALL states. In States B and C
-  he gets $6M for doing nothing. In State A he gets $6M plus the
-  enjoyment of playing.
+**状态 B（中度伤残，25%）**：上场得 $1000 万 - $200 万 = 净 $800 万，不上场得 $0 → **上场**。球队收益：**+$1000 万**。
 
-Step 3: Expected Value for the Unicorns
+**状态 C（永久伤残，25%）**：无法上场。Michaels 得 $0，球队支付 $0。收益：**$0**。
 
-  E[Profit | FOR SURE] = 0.50 x ($20M - $6M) + 0.25 x ($0 - $6M) + 0.25 x ($0 - $6M)
-                       = 0.50 x $14M + 0.25 x (-$6M) + 0.25 x (-$6M)
-                       = $7M + (-$1.5M) + (-$1.5M)
-                       = $4M
+**球队期望利润**：
 
-  IMPORTANT NOTE ON MORAL HAZARD: The analysis above already accounts
-  for Michaels' rational self-interest. In State B, he will NOT play
-  because the $6M is guaranteed. The Unicorns lose money in both State B
-  and State C.
+$$0.50 \times (+\$1000万) + 0.25 \times (+\$1000万) + 0.25 \times \$0 = \$500万 + \$250万 + \$0 = \textbf{\$750 万}$$
 
-  (Alternative calculation if we assumed Michaels plays in State B too --
-  which he would NOT rationally do: 0.50 x $14M + 0.25 x $14M + 0.25 x
-  (-$6M) = $7M + $3.5M - $1.5M = $9M. But this is wrong because it
-  ignores Michaels' incentive structure.)
+### 三、正面对比
 
-  CORRECTION -- Let me reconsider State B more carefully:
+| | 保底合同 ($600 万) | 绩效合同 ($1000 万) |
+|---|---|---|
+| 状态 A (50%) | 上场，+$1400 万 | 上场，+$1000 万 |
+| 状态 B (25%) | **不上场，-$600 万** | 上场，+$1000 万 |
+| 状态 C (25%) | 不上场，-$600 万 | 不上场，$0 |
+| **期望利润** | **$400 万** | **$750 万** |
 
-  Actually, we need to examine whether Michaels would play in State B
-  more carefully. Under the FOR SURE contract, $6M is guaranteed. Playing
-  costs him $2M in pain/treatment, yielding net $4M. Not playing yields
-  $6M. He strictly prefers not playing. So the $4M calculation stands.
+绩效合同的期望利润比保底合同高出 **$350 万**。
 
-  Wait -- but we should also consider: could the contract REQUIRE him to
-  play? If the contract says "pay $6M whether or not he plays," there is
-  no contractual obligation to play. If it said "pay $6M, and he must
-  play," then in State B he would play (since he can), but in State C he
-  cannot. However, the problem states the contract is simply "pay $6M
-  whether or not he plays," which implies no play obligation.
+### 四、为什么绩效合同更优
 
-  But let me reconsider the problem from a different angle. As a
-  practical matter, the FOR SURE contract likely contemplates that
-  Michaels will play if he can. The question is: what rational behavior
-  does each contract induce?
+**1. 解决道德风险**
 
-  Given the contract says payment is unconditional, there is no
-  enforceable obligation to play. Michaels in State B would rationally
-  choose not to play. Even if there were a "best efforts" clause, as
-  the contracting framework notes, "best efforts" is essentially
-  unenforceable because the team cannot verify the true degree of pain.
+保底合同下，Michaels 在状态 B 没有上场激励（反正拿 $600 万），球队白付钱。绩效合同把报酬与上场挂钩，状态 B 下 Michaels 有 $800 万的净激励去忍痛上场。
 
-  Expected profit (FOR SURE) = $4 million.
+**2. 消除逆向选择**
 
-============================================================================
+保底合同在所有状态下都被接受 —— 包括 Michaels 永久伤残（状态 C）、球队完全得不到任何价值的情况。这是**逆向选择**：合同对 Michaels 最有吸引力的时刻，恰恰是球队成本最高的时刻。绩效合同下，状态 C 球队支付 $0。
 
-V. ANALYSIS OF THE "CONTINGENT" CONTRACT: PAY $10 MILLION ONLY IF HE PLAYS
+**3. 风险分配合理**
 
-Under this contract, Michaels receives $10 million only if he plays.
-If he does not play (by choice or inability), he receives $0.
+绩效合同把"不能上场"的风险转移给 Michaels。这是合理的，因为：
+- Michaels 对自身健康状况有**信息优势**
+- 价值创造取决于 Michaels 的状态和行为
+- 更高的名义金额（$1000 万 vs $600 万）补偿了他承担的风险
 
-Step 1: Michaels' Decision in Each State
+**4. 做大蛋糕**
 
-  State A (Healthy, 50%): If he plays, he earns $10M plus the intrinsic
-  enjoyment of playing. If he does not play, $0.
-  RATIONAL CHOICE: Play.
-  Unicorns gain: $20M - $10M = $10M.
+- 保底合同总剩余：$2000 万 × 0.50 = $1000 万（状态 B 不上场，$2000 万收入被放弃）
+- 绩效合同总剩余：$2000 万 × 0.75 - $200 万 × 0.25 = $1500 万 - $50 万 = **$1450 万**
 
-  State B (Moderate Disability, 25%): If he plays, he earns $10M but
-  incurs $2M in pain/treatment costs, for a net of $8M.
-  If he does not play, he earns $0.
-  RATIONAL CHOICE: Play (net $8M >> $0).
-  Unicorns gain: $20M - $10M = $10M.
+绩效合同多创造了 **$450 万的总价值**，因为它激励 Michaels 在状态 B 上场 —— 上场收入（$2000 万）远超痛苦成本（$200 万）。
 
-  State C (Permanently Disabled, 25%): He cannot play.
-  Michaels earns $0. Unicorns pay $0.
-  Unicorns gain: $0.
+**5. 可验证性强**
 
-Step 2: Michaels' Acceptance Decision
+"是否上场"是一个容易验证的事实（要么在名单上出现在比赛中，要么没有），合同的触发条件完全可执行。
 
-  Michaels must decide before the season whether to sign. At the time of
-  signing, he does not yet know his health state (the problem says these
-  states will be known "in the summer, before the official season begins").
+### 五、敏感性分析
 
-  If he must sign before knowing his state, his expected payoff is:
-    0.50 x ($10M + enjoyment) + 0.25 x ($10M - $2M) + 0.25 x ($0)
-    = $5M+ + $2M + $0 = $7M+
-  This is clearly attractive; he would sign.
+设 p(B) 为中度伤残的概率。保底合同追平绩效合同的交叉点：
 
-  If he signs after knowing his state:
-    State A: Sign (gets $10M + enjoyment vs. $0). Yes.
-    State B: Sign (gets $10M - $2M = $8M net vs. $0). Yes.
-    State C: Sign or not, irrelevant (gets $0 either way). No reason to
-             sign, but also no cost to the Unicorns.
+$$p(A) \times \$2000万 - \$600万 = [1 - p(C)] \times \$1000万$$
 
-  Either way, Michaels accepts and plays in States A and B.
+在 p(C) = 25% 的条件下，求解得 **p(B) = 7.5%**。
 
-Step 3: Expected Value for the Unicorns
+也就是说，只有当中度伤残概率降到 7.5% 以下，保底合同才有竞争力。给定 p(B) = 25%，绩效合同占据压倒性优势。
 
-  E[Profit | CONTINGENT] = 0.50 x ($20M - $10M) + 0.25 x ($20M - $10M) + 0.25 x ($0)
-                         = 0.50 x $10M + 0.25 x $10M + 0.25 x $0
-                         = $5M + $2.5M + $0
-                         = $7.5M
+---
 
-============================================================================
+## 建议
 
-VI. HEAD-TO-HEAD COMPARISON
+**向 Michaels 提出绩效合同（$1000 万，仅在上场时支付）**。
 
-  +-------------------+------------------+--------------------+
-  |                   |   FOR SURE ($6M) |  CONTINGENT ($10M) |
-  +-------------------+------------------+--------------------+
-  | State A (50%)     |  Plays; +$14M    |  Plays; +$10M      |
-  | State B (25%)     |  No play; -$6M   |  Plays; +$10M      |
-  | State C (25%)     |  No play; -$6M   |  No play; $0       |
-  +-------------------+------------------+--------------------+
-  | Expected Profit   |       $4.0M      |       $7.5M        |
-  +-------------------+------------------+--------------------+
+该合同在每个维度上都更优：
+- 期望利润更高（$750 万 vs $400 万）
+- 解决道德风险（激励忍痛上场）
+- 消除逆向选择（不为零价值情景买单）
+- 风险分配给信息优势方
+- 创造更多总价值
+- 触发条件容易验证
 
-The CONTINGENT contract dominates by $3.5 million in expected value.
-
-============================================================================
-
-VII. KEY INSIGHTS: WHY THE CONTINGENT CONTRACT IS SUPERIOR
-
-1. SOLVES THE MORAL HAZARD PROBLEM
-
-   The FOR SURE contract creates a moral hazard: because Michaels is paid
-   regardless, he has no financial incentive to play when playing is
-   painful (State B). The Unicorns pay $6M and get nothing.
-
-   The CONTINGENT contract eliminates this moral hazard by tying payment
-   to performance. In State B, Michaels now has a powerful $8M net
-   incentive to play through the pain.
-
-2. ELIMINATES THE ADVERSE SELECTION RISK
-
-   Under the FOR SURE contract, Michaels accepts in every state --
-   including the state where he is permanently disabled and the Unicorns
-   receive zero value. This is a form of adverse selection: the contract
-   is most attractive to Michaels precisely when it is most costly to the
-   Unicorns (State C: he gets $6M for nothing).
-
-   Under the CONTINGENT contract, the Unicorns pay $0 in State C. The
-   contract self-selects: Michaels only earns money when the Unicorns
-   also earn money.
-
-3. RISK ALLOCATION IS APPROPRIATE
-
-   The CONTINGENT contract shifts the risk of non-performance to Michaels
-   (he gets $0 if he cannot play). This is appropriate because:
-   (a) Michaels has superior information about his own health.
-   (b) Michaels is the party whose actions and condition determine whether
-       value is created.
-   (c) The higher nominal amount ($10M vs. $6M) compensates him for
-       bearing this risk.
-
-4. THE HIGHER PRICE TAG IS MISLEADING
-
-   The CONTINGENT contract appears more expensive ($10M vs. $6M), but the
-   expected cost to the Unicorns is actually lower:
-     FOR SURE expected cost: $6M (paid in all states)
-     CONTINGENT expected cost: 0.75 x $10M = $7.5M (paid only if he plays)
-
-   While expected cost is slightly higher under CONTINGENT, the expected
-   REVENUE is dramatically higher ($15M vs. $10M) because Michaels plays
-   in 75% of scenarios vs. only 50%.
-
-5. MAKES THE PIE BIGGER
-
-   The CONTINGENT contract creates more total value (consistent with the
-   "make the pie bigger" principle of contract design):
-
-     FOR SURE total surplus: $20M x 0.50 - $2M x 0 = $10M
-     (Michaels does not play in State B, so the $20M revenue and the
-     $2M cost are both avoided in that state.)
-
-     CONTINGENT total surplus: $20M x 0.75 - $2M x 0.25 = $15M - $0.5M = $14.5M
-
-   The CONTINGENT contract generates $4.5M more total value because it
-   incentivizes Michaels to play in State B, where the value of his
-   playing ($20M) far exceeds his pain cost ($2M).
-
-============================================================================
-
-VIII. SENSITIVITY ANALYSIS
-
-What if the probability of each state changes?
-
-Let p(A) = probability of healthy, p(B) = probability of moderate
-disability, p(C) = probability of permanent disability.
-
-  E[FOR SURE]    = p(A) x $14M + p(B) x (-$6M) + p(C) x (-$6M)
-                 = p(A) x $14M - [p(B) + p(C)] x $6M
-                 = p(A) x $14M - [1 - p(A)] x $6M
-                 = p(A) x $20M - $6M
-
-  E[CONTINGENT]  = p(A) x $10M + p(B) x $10M + p(C) x $0
-                 = [p(A) + p(B)] x $10M
-                 = [1 - p(C)] x $10M
-
-CROSSOVER POINT (where FOR SURE = CONTINGENT):
-
-  p(A) x $20M - $6M = [1 - p(C)] x $10M
-
-With p(C) = 0.25 and p(A) = 1 - p(B) - 0.25:
-
-  (0.75 - p(B)) x $20M - $6M = 0.75 x $10M
-  $15M - p(B) x $20M - $6M = $7.5M
-  $9M - p(B) x $20M = $7.5M
-  p(B) x $20M = $1.5M
-  p(B) = 7.5%
-
-The FOR SURE contract only becomes competitive if p(B) drops below ~7.5%
-(with p(C) held at 25%). Since the given p(B) = 25%, the CONTINGENT
-contract is strongly favored.
-
-More generally, FOR SURE beats CONTINGENT only when the healthy state is
-overwhelmingly likely (above ~82.5%), making the moral hazard and adverse
-selection problems negligible.
-
-============================================================================
-
-IX. ADDITIONAL CONSIDERATIONS
-
-1. COULD A MODIFIED CONTRACT DO EVEN BETTER?
-
-   Yes. A hybrid contract could capture even more value:
-   - Pay $3M guaranteed + $7M if he plays.
-   This gives Michaels some security (reducing risk aversion concerns)
-   while still preserving the incentive to play in State B ($7M - $2M =
-   $5M net gain from playing). The Unicorns' expected profit would be:
-   0.50 x ($20M - $10M) + 0.25 x ($20M - $10M) + 0.25 x ($0 - $3M)
-   = $5M + $2.5M - $0.75M = $6.75M. This is between the two options.
-
-   However, the problem limits us to the two stated contracts.
-
-2. MICHAELS' BARGAINING POWER
-
-   In State B, under CONTINGENT, Michaels captures $8M net (which is
-   generous). Under FOR SURE in State B, Michaels captures $6M without
-   playing. The CONTINGENT contract is actually MORE generous to Michaels
-   in States A and B ($10M vs $6M), which may make it easier to sell in
-   negotiations.
-
-3. VERIFIABILITY
-
-   "Playing" is easily verifiable (Michaels is either on the roster and
-   appearing in games or he is not), so the contingency is enforceable.
-   This is a major advantage -- many performance-based contracts fail
-   because the trigger is hard to verify, but this one is straightforward.
-
-4. PUBLIC RELATIONS
-
-   Paying a star player $10M "only if he plays" may appear harsh in the
-   media. The Unicorns should frame it as a premium contract that reflects
-   confidence in Michaels' ability to contribute, with the higher dollar
-   figure ($10M vs. $6M) showing the team's valuation of his talent.
-
-============================================================================
-
-X. RECOMMENDATION
-
-Offer the CONTINGENT contract ($10 million, contingent on Michaels
-playing). This contract:
-
-  - Yields expected profit of $7.5M vs. $4.0M for the FOR SURE contract
-  - Solves the moral hazard problem (Michaels is incentivized to play
-    in State B)
-  - Eliminates adverse selection risk (no payment when Michaels cannot
-    contribute)
-  - Allocates risk to the party with superior information (Michaels
-    knows his own health)
-  - Creates more total value for both parties ($14.5M vs. $10M total
-    surplus)
-  - Is easily enforceable because "playing" is a verifiable condition
-
-The CONTINGENT contract is superior on every relevant dimension of
-contract design: expected value, incentive alignment, risk allocation,
-and verifiability.
-
-============================================================================
-End of Memorandum
+**核心教训**：表面上更便宜的合同（$600 万 < $1000 万）未必真便宜。当合同结构创造了错误的激励，"省下来"的钱会以更大的代价返还 —— 这就是道德风险的本质。
