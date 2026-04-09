@@ -109,13 +109,27 @@ See the [`examples/`](examples/) directory for detailed worked analyses:
 
 ## Why This Exists
 
-Law schools produce graduates who can parse a statute and brief a case, but who freeze when a spreadsheet lands on their desk. There has always been a gap between what law school teaches and what legal practice demands — the decision analysis, game theory, accounting, finance, economics, and statistics that lawyers need to actually serve their clients.
+### A ¥2,000,000 Skill Set — Now Open Source
 
-**AnythingButLaw** fills that gap by distilling these essential non-legal skills into a Claude Code skill, so every lawyer has a business-savvy analyst at their fingertips.
+Chinese law schools spend five years teaching statutes, cases, jurisprudence, and thesis writing. Then you graduate and discover: your client's problems are never just about the law. Should we settle? Are the CFO's numbers real? Does this contract create a moral hazard? Can we trust that regression analysis? — Law school never mentioned any of this.
 
-The name says it all: **Anything But Law** — because the most valuable thing a lawyer can learn is everything that isn't law.
+**This isn't your fault. Chinese legal education simply doesn't have this course.**
 
-中文名 **法外功夫** — 法律之外的真功夫。
+American law schools teach a course that covers 9 non-legal skills essential for lawyers: decision analysis, game theory, contract design, accounting, finance, microeconomics, law & economics, statistics, and multivariate regression. Not a liberal arts elective — real analytical frameworks, each targeting the most critical non-legal pain points in legal practice.
+
+The tuition, living costs, and opportunity cost of a 3-year JD add up to roughly **¥2,000,000 (≈$280K)**.
+
+When I went to Notre Dame Law School, it felt like stumbling into a hidden martial arts sect — I thought I was going to learn more advanced law, but the most valuable skills turned out to be everything *outside* the law. That's why the Chinese name is **法外功夫** ("kung fu beyond the law"): decision trees, game theory, regression analysis — none of it is law, but every bit of it keeps you alive on the legal battlefield.
+
+The problem: this "secret knowledge" has only been passed down to a handful of students. Hundreds of thousands of Chinese lawyers will never encounter it in their careers.
+
+**So I open-sourced it.**
+
+**AnythingButLaw** condenses a ¥2M education into one AI skill. No JD required. No three-year commitment. No English fluency needed. Install this skill, and Claude becomes your personal analyst — ready to deploy 9 analytical frameworks for negotiation, due diligence, litigation, and beyond.
+
+The most dangerous gap isn't lacking the skill — it's not knowing the skill exists.
+
+Now you know.
 
 ## Project Structure
 
